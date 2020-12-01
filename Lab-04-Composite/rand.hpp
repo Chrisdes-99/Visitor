@@ -4,7 +4,6 @@
 #include "base.hpp"
 #include <string>
 #include <stdlib.h>
-#include "../iterator.hpp"
 
 
 class Rand : public Base {

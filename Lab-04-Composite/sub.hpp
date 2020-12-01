@@ -3,8 +3,6 @@
 
 #include "base.hpp"
 #include "op.hpp"
-#include "../iterator.hpp"
-
 
 class Sub : public Base {
     private:

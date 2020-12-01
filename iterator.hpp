@@ -5,7 +5,8 @@
 
 //#include "../lab04/base.hpp"
 //#include "../lab04/container.hpp"
-#include "lab04include.hpp"
+//#include "lab04include.hpp"
+#include "./Lab-04-Composite/base.hpp"
 
 class Base;
 
