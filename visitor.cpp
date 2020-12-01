@@ -11,35 +11,35 @@ CountVisitor::CountVisitor() {
 }
 
 void CountVisitor::visit_op() {
-    
+   ops++; 
 }
 
 int CountVisitor::op_count() {
-    
+    return ops;   
 }
 
 void CountVisitor::visit_rand() {
-    
+    rands++;   
 }
 
 int CountVisitor::rand_count() {
-    
+    return rands;   
 }
 
 void CountVisitor::visit_mult() {
-    
+    mults++;   
 }
 
 int CountVisitor::mult_count() {
-    
+    return mults;   
 }
 
 void CountVisitor::visit_div() {
-    
+    divs++;   
 }
 
 int CountVisitor::div_count() {
-    
+    return divs;   
 }
 
 void CountVisitor::visit_add() {

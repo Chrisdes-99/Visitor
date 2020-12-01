@@ -22,6 +22,8 @@ class Rand : public Base {
         virtual Base* get_left() { return nullptr; }
 
         virtual Base* get_right() { return nullptr; }
+
+        virtual void accept(CountVisitor* var) { var->visit_rand(); }
 };
 
 #endif //__RAND_HPP__
