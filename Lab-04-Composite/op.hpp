@@ -3,8 +3,10 @@
 
 #include "base.hpp"
 #include <string>
+#include "../iterator.hpp"
 
-class Op : public Base {
+
+class Op: public Base {
 
     private:
         double val; 
@@ -13,6 +15,14 @@ class Op : public Base {
         Op(double value) : val(value) { }
         virtual double evaluate() { return val; }
         virtual std::string stringify() { return std::to_string(val);}
+
+        //NEW
+        virtual Iterator* create_iterator() { return new NullIterator(this); }
+
+        virtual Base* get_left() { return nullptr; }
+
+        virtual Base* get_right() { return nullptr; }
+
 };
 
 #endif //__OP_HPP__

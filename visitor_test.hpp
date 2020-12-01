@@ -3,9 +3,9 @@
 
 #include "gtest/gtest.h"
 #include "lab04include.hpp"
+#include "iterator.hpp"
 
-
-
+/*
 //------------------Op------------------
 TEST(OpTest, OpEvaluateNonZero) {
     Op* test = new Op(2.34);
@@ -64,5 +64,6 @@ TEST(SubTest, SubEvaluateNonZero) {
     EXPECT_NEAR(test->evaluate(), 1.8797, 0.000001);
     EXPECT_EQ("4.323000 - 2.443300", test->stringify());
 }
+*/
 
 #endif //__VISITOR_TEST_HPP__
