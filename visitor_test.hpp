@@ -28,5 +28,58 @@ TEST(NullTest, OpTest) {
     EXPECT_TRUE(test->is_done());
     EXPECT_EQ(test->current(), nullptr);
 }
+
+
+//Count Testing
+
+TEST(BinaryCount,AddSub){
+    Base* four = new Op(4);
+    Base* five = new Op(5);
+
+    Add* value = new Add(four,five);
+
+    Base* dummy_node = new sub(value,five);
+
+    Iterator* test = dummy_node->create_iterator();
+    CountVistor* count = new CountVisitor();
+
+    test->first();
     
+    while(!test->is_done(){
+    Base* val = test->current();
+    val->accept(count);
+    }
+
+    EXPECT_EQ(2,count->op_count());
+    EXPECT_EQ(1,count->add_count());
+    
+}
+
+TEST(Binary_Count,MultDiv){
+    Base* value = new Op(20);
+    Base* value2 = new Op(5);
+
+    Mult* mult = new Mult(four,five);
+
+    Base* dummy_node = new div(mult,value2);
+
+    Iterator* test = dummy_node->create_iterator();
+    CountVistor* count = new CountVisitor();
+
+    test->first();
+
+    while(!test->is_done(){
+    Base* state = test->current();
+    state->accept(count);
+    }
+
+    EXPECT_EQ(2,count->op_count());
+    EXPECT_EQ(1,count->mult_count());
+
+}
+
+ 
+
+
+   
 #endif //__VISITOR_TEST_HPP__
