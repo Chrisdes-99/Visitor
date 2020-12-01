@@ -9,6 +9,7 @@ ADD_EXECUTABLE(test
    unit_test.cpp
    binary_iterator.cpp
    preorder_iterator.cpp
+   visitor.cpp
 )
 
 
@@ -16,6 +17,7 @@ ADD_EXECUTABLE(main
     main.cpp
     binary_iterator.cpp
     preorder_iterator.cpp
+    visitor.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
