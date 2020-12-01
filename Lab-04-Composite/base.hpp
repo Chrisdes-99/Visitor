@@ -3,7 +3,10 @@
 
 #include <string>
 
-class Base {
+#include "../iterator.hpp"
+class Iterator;
+
+class Base{
     public:
         /* Constructors */
         Base() { };
@@ -12,6 +15,12 @@ class Base {
         /* Pure Virtual Functions */
         virtual double evaluate() = 0;
         virtual std::string stringify() = 0;
+        
+        //NEW
+        virtual Iterator * create_iterator() = 0;
+
+        virtual Base* get_left() = 0;
+        virtual Base* get_right() = 0;
 };
 
 #endif //__BASE_HPP__
