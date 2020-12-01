@@ -23,6 +23,8 @@ class Pow : public Base {
         virtual Base* get_left() { return this->left; }
 
         virtual Base* get_right() { return this->right; }
+
+        virtual void accept(CountVisitor* var){var->visit_pow();}
 };
 
 #endif //__POW_HPP__
