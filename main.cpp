@@ -55,6 +55,32 @@ int main() {
         test3->next();
     }
 
+    cout << "====Done with 3rd test====" << endl;
+
+    Op* num1 = new Op(3);
+    Op* num2 = new Op(7);
+
+    Pow* temp = new Pow(num1, num2);
+    Add* dummy = new Add(temp, num2);
+
+    Iterator* it = new PreorderIterator(dummy);//dummy->create_iterator();
+
+    CountVisitor* visit = new CountVisitor();
+    it->first();
+    while(!it->is_done()) {
+        Base* phase = it->current();
+        phase->accept(visit);
+        cout << "Current Branch: " << phase->stringify() << endl;
+        if (phase->get_left() !=  nullptr){
+        cout << "LEFT: " << phase->get_left()->stringify() << endl;
+        }
+        if (phase->get_right() != nullptr) {
+        cout << "RIGHT: " << phase->get_right()->stringify() << endl;
+        }
+        it->next();
+    }
+    cout << "OPS: " << visit->op_count() << endl;
+    
 
 
     cout << "====PRGM END====" << endl;
