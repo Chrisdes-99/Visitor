@@ -61,7 +61,7 @@ void CountVisitor::visit_sub() {
     sub++;
 }
 
-int CountVisitor::sub__count() {
+int CountVisitor::sub_count() {
     return sub;
 }
 
