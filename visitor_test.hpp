@@ -13,12 +13,13 @@ TEST(BinaryTest, AddTest) {
     Add* add = new Add(two, three);
     
     Iterator* test = add->create_iterator();
-        
+         
     EXPECT_EQ(test->current()->evaluate(), 2);
     test->next();
     EXPECT_EQ(test->current()->evaluate(), 3);
     test->next();
     EXPECT_TRUE(test->is_done());
+
 }
 
 TEST(BinaryTest_Sub, SubTest) {
@@ -28,12 +29,13 @@ TEST(BinaryTest_Sub, SubTest) {
     Sub* sub = new Sub(ten,five);
 
     Iterator* test = sub->create_iterator();
-
+    
     EXPECT_EQ(test->current()->evaluate(), 10);
     test->next();
     EXPECT_EQ(test->current()->evaluate(), 5);
     test->next();
     EXPECT_TRUE(test->is_done());
+
 }
 
 TEST(BinaryTest_Mult, MultTest) {
@@ -49,6 +51,8 @@ TEST(BinaryTest_Mult, MultTest) {
     EXPECT_EQ(test->current()->evaluate(),12);
     test->next();
     EXPECT_TRUE(test->is_done());
+  
+
 }
 
 TEST(BinaryTest_Div, DivTest) {
@@ -64,6 +68,7 @@ TEST(BinaryTest_Div, DivTest) {
     EXPECT_EQ(test->current()->evaluate(), 5);
     test->next();
     EXPECT_TRUE(test->is_done());
+
 }
 
 
